@@ -11,62 +11,140 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
-#nav li{
-    list-style:none;
-    text-decoration-style: none;
-    display: inline;
+#img img{
+width:300px;
+height:300px;
+}
+#nav2{
+  text-align: center;
+}
+#nav2 img{
+  height:100px;
+  width:100px;
+  margin:10px 40px 0px 40px;
+  text-align: center;
+}
+#nav2 p{
+  margin-left:40px;
+  text-align: center;
+}
+
+#nav2 a{
+  text-decoration: none;
+  background-color: transparent;
+  color:black;
+}
+.row img:hover{
+  height:240px;
+  transition:10s;
+}
+#nav2 img:hover{
+height:120px;
+}
+.navbar-brand{
+  font-size:xx-large;
+  font-weight: bolder;
+  
+}
+
+@media(max-width:740px){
+  #nav2 img{
+  display: inline;
+  border-radius:25%;
+  height:100px;
+  width:200px;
+  padding-left:10px;
+  padding-right:20px;
+}
+#nav2 p{
+  padding-left:15px;
+}
+.navbar-brand{
+  font-size: large;
+}
 }
 </style>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body style="background-color:wheat">
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning" style="height:100px; z-index:5; font-family: Georgia, 'Times New Roman', Times, serif; font-weight: bolder;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="#">Ecommerce</a>
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="navbar-brand"  href="#">Ecommerce</a>
+        <div class="collapse navbar-collapse bg-warning justify-content-end" id="navbarTogglerDemo01">
+          <ul class="navbar-nav" id="nav" style=" padding:10px; font-weight: bolder; font-size: larger; font-family: Georgia, 'Times New Roman', Times, serif;">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">New Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link "><i class="fa-solid fa-cart-shopping"></i></a>
-            </li>
-          </ul>
-          <ul class="navbar-nav justify-content-end">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">SignUp</a>
+              <a class="nav-link" href="#">Profile</a>
             </li>
             <li class="nav-item">
               <a class="nav-link ">LogOut</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " ><i class="fa-solid fa-cart-shopping"></i></a>
             </li>
           </ul>
         </div>
       </nav>
       <div class="container">
-        <section>
+        <div style="height:150px; margin-bottom:20px; margin-top:10px; background-color:white;" >
+          <div class="table-responsive">
+            <table  class="table-responsive" id="nav2">
+              <tr>
+                <th><a href="#mobile"> <img class="d-block  "  src="{% static "images/redmi.jpg" %}" >
+                <p >Mobiles</p> </a>  </th>
+                <th> <a href="#mobileacc" >   <img class="d-block   "  src="{% static "images/ma1.jpg" %}" >
+                  <p  >Mobiles Accessories</p> </a> </th>
+                  <th> <a href="#beauty"> <img class="d-block  "  src="{% static "images/beauty.webp" %}"  >
+                    <p >Beauty Care</p> </a> </th>
+                      <th>
+                        <a href="#pets">   <img class="d-block   "  src="{% static "images/p1.jpg" %}" >
+                        <p >Pets</p>  </a></th>
+                        <th>
+                          <a href="#kitchen"> <img class="d-block"  src="{% static "images/ki1.webp" %}"  >
+                          <p >Kitchen Wears</p> </a> </th>
+                          <th> <a href="#health">  <img class="d-block  "  src="{% static "images/me1.jpg" %}" >
+                            <p  >Health</p> </a> </th>
+              </tr>
+  
+            </table>
+          </div>
+        </div>
+      <section>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" id="img">
+            <div class="carousel-item active">
+              <img class="d-block w-100  "  src="{% static "images/offer1.jpg" %}" alt="First slide"   >
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100  " src="{% static "images/offer2.jpg" %}" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100  " src="{% static "images/offer3.jpg" %}"alt="Third slide">
+            </div>
+          </div>
+        </div>
+
+        </section>
+
+        <section id="newproduct">
           <div class="container my-5">
             <header class="mb-4">
               <h3>New products</h3>
             </header>
         
-            <div class="row">
+            <div class="row" >
               <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
                 <div class="card w-100 my-2 shadow-2-strong">
-                  <img src="{% static "images/gopro.jpg" %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <img src="{% static "images/gopro.jpg" %}" class="card-img-top" style="aspect-ratio: 1 / 1">
                   <div class="card-body d-flex flex-column">
                     <h5 class="card-title">GoPro HERO6 4K Action Camera - Black</h5>
-                    <p class="card-text">$790.50</p>
-                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                    <p class="card-text">&#8377; 80000 <s>&#8377; 950000</s></p>
+                  
+                      <a href="#!" class="btn btn-primary" id="btn">Add to cart</a>
                       <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -75,7 +153,7 @@
                   <img src="{% static 'images/cannon.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
                   <div class="card-body d-flex flex-column">
                     <h5 class="card-title">Canon camera 20x zoom, Black color EOS 2000</h5>
-                    <p class="card-text">$320.00</p>
+                    <p class="card-text">&#8377;  120000 <s>&#8377; 125000</s></p>
                     <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
                       <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
                       <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
@@ -88,7 +166,7 @@
                   <img src="{% static 'images/redmi.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
                   <div class="card-body d-flex flex-column">
                     <h5 class="card-title">Xiaomi Redmi 8 Original Global Version 4GB</h5>
-                    <p class="card-text">$120.00</p>
+                    <p class="card-text">&#8377; 67000 <s>&#8377; 70000</s></p>
                     <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
                       <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
                       <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
@@ -101,7 +179,7 @@
                   <img src="{% static 'images/iphone.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
                   <div class="card-body d-flex flex-column">
                     <h5 class="card-title">Apple iPhone 12 Pro 6.1" RAM 6GB 512GB Unlocked</h5>
-                    <p class="card-text">$120.00</p>
+                    <p class="card-text">&#8377;  96000 <s>&#8377; 100000</s></p>
                     <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
                       <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
                       <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
@@ -114,7 +192,7 @@
                   <img src="{% static 'images/applewatch.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
                   <div class="card-body d-flex flex-column">
                     <h5 class="card-title">Apple Watch Series 1 Sport Case 38mm Black</h5>
-                    <p class="card-text">$790.50</p>
+                    <p class="card-text">&#8377;  12000 <s>&#8377; 20000</s></p>
                     <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
                       <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
                       <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
@@ -127,7 +205,7 @@
                   <img src="{% static 'images/t1.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
                   <div class="card-body d-flex flex-column">
                     <h5 class="card-title">T-shirts with multiple colors, for men and lady</h5>
-                    <p class="card-text">$120.00</p>
+                    <p class="card-text">&#8377; 499 <s>&#8377; 502</s></p>
                     <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
                       <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
                       <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
@@ -140,7 +218,7 @@
                   <img src="{% static 'images/h1.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
                   <div class="card-body d-flex flex-column">
                     <h5 class="card-title">Gaming Headset 32db Blackbuilt in mic</h5>
-                    <p class="card-text">$99.50</p>
+                    <p class="card-text">&#8377; 8000 <s> &#8377; 9500</s></p>
                     <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
                       <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
                       <a href="#!" class="btn btn-light border icon-hover px-2 pt-2"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
@@ -153,7 +231,7 @@
                   <img src="{% static 'images/t2.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
                   <div class="card-body d-flex flex-column">
                     <h5 class="card-title">T-shirts with multiple colors, for men and lady</h5>
-                    <p class="card-text">$120.00</p>
+                    <p class="card-text">&#8377;  867 <s>&#8377;  950</s></p>
                     <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
                       <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
                       <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
@@ -164,6 +242,677 @@
             </div>
           </div>
         </section>
+        <section id="mobile">
+          <div class="container my-5">
+            <header class="mb-4">
+              <h3>MOBILES</h3>
+            </header>
+        
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static "images/samsuang.jpg" %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">SUMSUNG S 22 ULTRA</h5>
+                    <p class="card-text">&#8377; 120000  <s>&#8377;132000</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/xaiomi.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Xiaomi 12 Pro 5G</h5>
+                    <p class="card-text">&#8377; 12000 <s>&#8377;13500</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/redmi.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Xiaomi Redmi 8 Original Global Version 4GB</h5>
+                    <p class="card-text">&#8377; 67000 <s>&#8377; 70000</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/iphone.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Apple iPhone 12 Pro 6.1" RAM 6GB 512GB Unlocked</h5>
+                    <p class="card-text">&#8377; 96000 <s>100000</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/techno.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Techno Pop 7 </h5>
+                    <p class="card-text">&#8377; 15000 <s>&#8377;170000</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/oppo.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Oppo A79 5G</h5>
+                    <p class="card-text">&#8377; 16000 <s>&#8377;18000</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/oppo1.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">OPPO 4 2Gb Ram</h5>
+                    <p class="card-text">&#8377;12000 <s>&#8377; 13000</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border icon-hover px-2 pt-2"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/oneplus.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">One Plus 9 pro T</h5>
+                    <p class="card-text">&#8377;45000 <S>&#8377;50000</S></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="mobileacc">
+          <div class="container my-5">
+            <header class="mb-4">
+              <h3>MOBILE Accessories</h3>
+            </header>
+        
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static "images/case1.jpg" %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Vivo Y 21 Case Cover</h5>
+                    <p class="card-text">&#8377;300 <s>&#8377;350</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/case2.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Iphone 10r Case</h5>
+                    <p class="card-text">&#8377;999 <s>&#8377;1000</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/case3.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Iphone 12 pro Case</h5>
+                    <p class="card-text">&#8377;1200 <s>&#8377;1300</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/case4.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Apple iPhone 12 Unlocked</h5>
+                    <p class="card-text">&#8377;1300 <s>&#8377;1500</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/case5.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Vivo y27 Case</h5>
+                    <p class="card-text">&#8377; 250 <s>&#8377;300</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/sc iphone12.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Screen-Card card-6</h5>
+                    <p class="card-text">&#8377; 500 <S>&#8377;700</S></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/h1.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Gaming Headset 32db Blackbuilt in mic</h5>
+                    <p class="card-text">&#8377;8000 <s>&#8377;9000</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border icon-hover px-2 pt-2"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/bsc iphone.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Apple iphone hard Cover</h5>
+                    <p class="card-text">&#8377;1700 <s>&#8377;2000</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="beauty">
+          <div class="container my-5">
+            <header class="mb-4">
+              <h3>Beauty Products</h3>
+            </header>
+        
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static "images/beauty1.jpg" %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Wow Face serum</h5>
+                    <p class="card-text">&#8377;500 <s>&#8377;700</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/beauty2.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Wow Face Serum with Hcl Acid</h5>
+                    <p class="card-text">&#8377; 1200 <s>&#8377;1500</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/beauty3.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Face torner</h5>
+                    <p class="card-text">&#8377;300 <s>&#8377;500</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/beauty4.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Lacto Calamin</h5>
+                    <p class="card-text">&#8377; 500 <s>&#8377;700</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="pets">
+          <div class="container my-5">
+            <header class="mb-4">
+              <h3>Dogs food and Supplement</h3>
+            </header>
+        
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static "images/dog1" %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Pedigree for pupy</h5>
+                    <p class="card-text">&#8377;500 <s>&#8377;700</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/dog2.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Dog food</h5>
+                    <p class="card-text">&#8377; 1200 <s>&#8377;1500</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/dog3.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Joint care calcium</h5>
+                    <p class="card-text">&#8377;2300 <s>&#8377;1500</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/dog4.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Omega 3 and Vitamin For dogs</h5>
+                    <p class="card-text">&#8377; 2500 <s>&#8377;1700</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container my-5">
+            <header class="mb-4">
+              <h3>Cats food and Supplement</h3>
+            </header>
+        
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static "images/cat1.jpg" %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Bone Builder</h5>
+                    <p class="card-text">&#8377;2500 <s>&#8377;2700</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/cat2.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Vitamin Gel</h5>
+                    <p class="card-text">&#8377; 1200 <s>&#8377;1500</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/cat3.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">whiskas Cat foodr</h5>
+                    <p class="card-text">&#8377;1300 <s>&#8377;1500</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/cat4.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Reveal Hybrid Cat food</h5>
+                    <p class="card-text">&#8377; 1500 <s>&#8377;1700</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="kitchen">
+          <div class="container my-5">
+            <header class="mb-4">
+              <h3>Kitchen Items</h3>
+            </header>
+        
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static "images/kit1.jpg" %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Presure Cooker</h5>
+                    <p class="card-text">&#8377;1500 <s>&#8377;1700</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/kit2.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">4 Burner GAs stove</h5>
+                    <p class="card-text">&#8377; 2200 <s>&#8377;2500</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/kit3.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Stianles steel Spoon</h5>
+                    <p class="card-text">&#8377;300 <s>&#8377;500</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/beauty4.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Kitchen Wear</h5>
+                    <p class="card-text">&#8377; 1000 <s>&#8377;1200</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="health">
+          <div class="container my-5">
+            <header class="mb-4">
+              <h3>Health</h3>
+            </header>
+        
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static "images/hel1.jpg" %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Omega 3/Fish oil</h5>
+                    <p class="card-text">&#8377;500 <s>&#8377;700</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/hel2.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Omega3+Dha 1000</h5>
+                    <p class="card-text">&#8377; 1200 <s>&#8377;1500</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/hel3.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Protien powder</h5>
+                    <p class="card-text">&#8377;3000 <s>&#8377;4500</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                <div class="card w-100 my-2 shadow-2-strong">
+                  <img src="{% static 'images/hel4.jpg' %}" class="card-img-top" style="aspect-ratio: 1 / 1" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Whey protien</h5>
+                    <p class="card-text">&#8377; 3500 <s>&#8377;4700</s></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                      <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
       </div>
+      <footer class="text-center text-lg-start text-muted " style="background-color: #f5f5f5;">
+        <!-- Section: Links  -->
+        <section class="">
+          <div class="container text-center text-md-start pt-4 pb-4">
+            <!-- Grid row -->
+            <div class="row mt-3">
+              <!-- Grid column -->
+              <div class="col-12 col-lg-3 col-sm-12 mb-2">
+                <!-- Content -->
+                <a href="https://mdbootstrap.com/" target="_blank" class="">
+                  <h2>Ecommerce</h2>
+                </a>
+                <p class="mt-2 text-dark">
+                  © 2023 Copyright: Ecommerce
+                </p>
+              </div>
+              <!-- Grid column -->
+      
+              <!-- Grid column -->
+              <div class="col-6 col-sm-4 col-lg-2">
+                <!-- Links -->
+                <h6 class="text-uppercase text-dark fw-bold mb-2">
+                  Store
+                </h6>
+                <ul class="list-unstyled mb-4">
+                  <li><a class="text-muted" href="#">About us</a></li>
+                  <li><a class="text-muted" href="#">Find store</a></li>
+                  <li><a class="text-muted" href="#">Categories</a></li>
+                  <li><a class="text-muted" href="#">Blogs</a></li>
+                </ul>
+              </div>
+              <!-- Grid column -->
+      
+              <!-- Grid column -->
+              <div class="col-6 col-sm-4 col-lg-2">
+                <!-- Links -->
+                <h6 class="text-uppercase text-dark fw-bold mb-2">
+                  Information
+                </h6>
+                <ul class="list-unstyled mb-4">
+                  <li><a class="text-muted" href="#">Help center</a></li>
+                  <li><a class="text-muted" href="#">Money refund</a></li>
+                  <li><a class="text-muted" href="#">Shipping info</a></li>
+                  <li><a class="text-muted" href="#">Refunds</a></li>
+                </ul>
+              </div>
+              <!-- Grid column -->
+      
+              <!-- Grid column -->
+              <div class="col-6 col-sm-4 col-lg-2">
+                <!-- Links -->
+                <h6 class="text-uppercase text-dark fw-bold mb-2">
+                  Support
+                </h6>
+                <ul class="list-unstyled mb-4">
+                  <li><a class="text-muted" href="#">Help center</a></li>
+                  <li><a class="text-muted" href="#">Documents</a></li>
+                  <li><a class="text-muted" href="#">Account restore</a></li>
+                  <li><a class="text-muted" href="#">My orders</a></li>
+                </ul>
+              </div>
+              <!-- Grid column -->
+      
+              <!-- Grid column -->
+              <div class="col-12 col-sm-12 col-lg-3">
+                <!-- Links -->
+                <h6 class="text-uppercase text-dark fw-bold mb-2">Newsletter</h6>
+                <p class="text-muted">Stay in touch with latest updates about our products and offers</p>
+                <div class="input-group mb-3">
+                  <input type="email" class="form-control border" placeholder="Email" aria-label="Email" aria-describedby="button-addon2" />
+                  <button class="btn btn-light border shadow-0" type="button" id="button-addon2" data-mdb-ripple-color="dark">
+                    Join
+                  </button>
+                </div>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+          </div>
+        </section>
+        <!-- Section: Links  -->
+      
+        <div class="">
+          <div class="container">
+            <div class="d-flex justify-content-between py-4 border-top">
+              <!--- payment --->
+              <div>
+                <i class="fab fa-lg fa-cc-visa text-dark"></i>
+                <i class="fab fa-lg fa-cc-amex text-dark"></i>
+                <i class="fab fa-lg fa-cc-mastercard text-dark"></i>
+                <i class="fab fa-lg fa-cc-paypal text-dark"></i>
+              </div>
+              <!--- payment --->
+      
+              <!--- language selector --->
+              <div class="dropdown dropup">
+                <a class="dropdown-toggle text-dark" href="#" id="Dropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false"> <i class="flag-united-kingdom flag m-0 me-1"></i>English </a>
+      
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="Dropdown">
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English <i class="fa fa-check text-success ms-2"></i></a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
+                  </li>
+                </ul>
+              </div>
+              <!--- language selector --->
+            </div>
+          </div>
+        </div>
+      </footer>
 </body>
 </html>

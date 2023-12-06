@@ -1,8 +1,56 @@
-.icon-hover:hover {
-    border-color: #3b71ca !important;
-    background-color: white !important;
-  }
-  
-  .icon-hover:hover i {
-    color: #3b71ca !important;
-  }
+
+#img img{
+    width:300px;
+    height:300px;
+    }
+#nav2{
+      text-align: center;
+    }
+#nav2 img{
+      height:100px;
+      width:100px;
+      margin:10px 40px 0px 40px;
+      text-align: center;
+    }
+#nav2 p{
+      margin-left:40px;
+      text-align: center;
+    }
+    
+#nav2 a{
+      text-decoration: none;
+      background-color: transparent;
+      color:black;
+    }
+.row img:hover{
+      height:240px;
+      transition:10s;
+    }
+#nav2 img:hover{
+    height:105px;
+    }
+#navbar-brand{
+  font-size: xx-large;
+}
+#login_img{
+  width:530px; height:330px;
+}
+@media(max-width:740px){
+#nav2 img{
+      display: inline;
+      border-radius:25%;
+      height:100px;
+      width:200px;
+      padding-left:10px;
+      padding-right:20px;
+    }
+#nav2 p{
+      padding-left:15px;
+    }
+#navbar-brand{
+      font-size: large;
+    }
+#login_img{
+  width:170px;
+}
+    }

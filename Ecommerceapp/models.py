@@ -11,3 +11,8 @@ class Product(models.Model):
 class customer(models.Model):
     user_id=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
     address=models.CharField(max_length=255,null=True)
+class CartItem(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=0)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date_added = models.DateTimeField(auto_now_add=True)

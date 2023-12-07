@@ -2,6 +2,7 @@
 #img img{
     width:300px;
     height:300px;
+    
     }
 #nav2{
       text-align: center;
@@ -24,8 +25,8 @@
     }
 .row img:hover{
       height:240px;
-      transition:10s;
-    }
+      transition: width 2s;
+}
 #nav2 img:hover{
     height:105px;
     }
@@ -33,8 +34,44 @@
   font-size: xx-large;
 }
 #login_img{
-  width:530px; height:330px;
+  width:530px; height:300px;
 }
+#login_form{
+  width:300px;
+  height:400px;
+}
+.product-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next row if necessary */
+  justify-content: space-between; /* Space items evenly along the main axis */
+  list-style: none; /* Remove list styles */
+  padding: 0;
+}
+
+.product-item {
+   
+  flex: 1; /* Grow to fill available space evenly */
+   /* Limit item width to avoid overcrowding */
+  margin: 10px; /* Add spacing between items */
+  border: 1px solid #ccc; /* Add a border for visual separation */
+  padding: 10px;
+  text-align: center;
+}
+#button:hover{
+  background-color:rgb(17, 240, 17);
+}
+
+/* Style the "Buy Now" button */
+.buy-now-button {
+  display: block;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
 @media(max-width:740px){
 #nav2 img{
       display: inline;
@@ -50,7 +87,11 @@
 #navbar-brand{
       font-size: large;
     }
-#login_img{
+/* #login_img{
   width:170px;
 }
+#login_form{
+  width:250px;
+  height:400px;
+} */
     }

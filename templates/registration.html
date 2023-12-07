@@ -1,7 +1,7 @@
 {% extends 'navbar.html' %}
 {% block content %}
-<div class="container">
-<form style="background-color: antiquewhite; padding:15px; margin-top:100px;" class="w-75 mx-auto d-block" method="post" action="{% url 'doregistration' %}">
+<div class="container text-light">
+<form style=" padding:15px; margin-top:100px;" class="w-75 mx-auto d-block" method="post" action="{% url 'doregistration' %}">
     {% csrf_token %}
     <h2 style="text-align: center;">Registration</h2>
     <div class="form-group">
@@ -31,7 +31,7 @@
         title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" class="form-control">
     </div>
     
-    <button type="submit" class="btn btn-primary mx-auto d-block">Register</button>
+    <button type="submit" class="btn btn-primary mx-auto d-block" id="button">Register</button>
 </form>
 </div>
 {% endblock %}

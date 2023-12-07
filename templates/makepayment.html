@@ -1,0 +1,26 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<div class="container text-light" >
+<form method="post" action="{% url 'do_payment' %}" class="w-75 mx-auto d-block">
+    {% csrf_token %}
+    <h2>Payment gate way</h2>
+    <div class="form-group">
+        <label>Address</label>
+        <textarea class="form-control " disabled>{{data.address}}</textarea>
+    </div>
+    <div class="form-group">
+        <label>Total Amount</label>
+      <input type="text" value="{{tp}}" class="form-control" disabled>
+    </div>
+    <div class="form-group">
+        <label>Card Number</label>
+      <input type="text" name="card"  required pattern="[0-9]{12}" title="12 Digit number only" class="form-control" 
+    </div>
+    <div class="form-group">
+        <label>cvv</label>
+      <input type="text"name="cvv" required pattern="[0-9]{3}" title="3 Digit only"  class="form-control" >
+    </div>
+    <button type="submit" class="btn btn-primary">PAY</button>
+</form>
+</div>
+{% endblock %}

@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 <div class="container">
-<form style="padding:15px; margin-top:100px;" class="w-50 mx-auto d-block text-light" method="post" action="{% url 'dologin' %}">
+<form style="padding:15px; margin-top:100px; background-repeat: no-repeat; background-size: cover; background-image: url('{% static 'images/space1.jpg' %}'); " class="w-50 mx-auto d-block text-light" method="post" action="{% url 'dologin' %}">
     {% csrf_token %}
    <div  class="w-100"  style="display:inline-block; "> 
     <h2 style="text-align: center;">Login</h2>

@@ -21,6 +21,8 @@ def doregistration(request):
         Last_name=request.POST['lname']
         Email=request.POST['email']
         address=request.POST['address']
+        locality=request.POST['locality']
+        pin=request.POST['postoffice']
         password=request.POST['password']
         Cpassword=request.POST['cpassword']
         if password == Cpassword:
@@ -38,6 +40,8 @@ def doregistration(request):
             data2=customer()
             data2.user_id=data
             data2.address=address
+            data2.locality=locality
+            data2.pin=pin
             data2.save()
             messages.success(request,'Registration success full')
             return redirect('registration')
@@ -111,3 +115,7 @@ def do_payment(request):
         messages.success(request,'order succesfull')
         return redirect('homepage')
     return redirect('makepayment')
+def payment(request):
+    return render(request,'payment.html')
+def view_item(request,pk):
+    return render(request,'view_item.html')

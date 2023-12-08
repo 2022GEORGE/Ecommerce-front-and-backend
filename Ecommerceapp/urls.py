@@ -16,5 +16,7 @@ urlpatterns = [
    path('add/<int:pk>',views.add,name='add'),
    path('less/<int:pk>',views.less,name='less'),
    path('makepayment',views.makepayment,name='makepayment'),
-   path('do_payment',views.do_payment,name='do_payment')
+   path('do_payment',views.do_payment,name='do_payment'),
+   path('paymet',views.payment,name='payment'),
+   path('view_item/<int:pk>',views.view_item,name='view_item')
 ]

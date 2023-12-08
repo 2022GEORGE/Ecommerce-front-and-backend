@@ -1,7 +1,7 @@
 {% extends 'navbar.html' %}
 {% block content %}
-<div class="container text-light">
-<form style=" padding:15px; margin-top:100px;" class="w-75 mx-auto d-block" method="post" action="{% url 'doregistration' %}">
+<div class="container text-light" >
+<form style="padding:25px; margin-top:50px;" class="w-75 mx-auto d-block" method="post" action="{% url 'doregistration' %}">
     {% csrf_token %}
     <h2 style="text-align: center;">Registration</h2>
     <div class="form-group">
@@ -17,8 +17,16 @@
         <input type="email" requird  name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" class="form-control">
     </div>
     <div class="form-group">
-        <lable>Address</lable>
+        <lable>House/flat:/:</lable>
         <textarea  name="address" required class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <lable>locality</lable>
+       <input type="text" name="locality" required  class="form-control">
+    </div>
+    <div class="form-group">
+        <lable>PIN/Post office:No</lable>
+       <input type="number" maxlength="6" minlength="6" name="postoffice" required class="form-control">
     </div>
     <div class="form-group">
         <label>Password</label>

@@ -118,4 +118,5 @@ def do_payment(request):
 def payment(request):
     return render(request,'payment.html')
 def view_item(request,pk):
-    return render(request,'view_item.html')
+    data=Product.objects.get(id=pk)
+    return render(request,'view_item.html',{'data':data})

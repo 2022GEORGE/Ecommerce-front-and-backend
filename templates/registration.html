@@ -1,7 +1,8 @@
 {% extends 'navbar.html' %}
 {% block content %}
+{% load static%}
 <div class="container text-light" >
-<form style="padding:25px; margin-top:50px;" class="w-75 mx-auto d-block" method="post" action="{% url 'doregistration' %}">
+<form style="padding:25px; margin-top:50px; background-size: cover; background-repeat: no-repeat;  background-image: url('{% static "images/login2.png" %}');" class="w-75 mx-auto d-block" method="post" action="{% url 'doregistration' %}">
     {% csrf_token %}
     <h2 style="text-align: center;">Registration</h2>
     <div class="form-group">

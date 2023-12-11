@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,HttpResponseRedirect
-from .models import Product,customer,CartItem
+from .models import Product,customer,CartItem,wishlist
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import login,authenticate,logout
 from django.contrib import messages
@@ -10,7 +10,9 @@ def homepage(request):
     data=Product.objects.all()
     c=CartItem.objects.filter(user=request.user.id)
     c1=c.count()
-    return render(request,'homepage.html',{'data':data,'c':c1})
+    wl=wishlist.objects.filter(user=request.user.id)
+    c2=wl.count()
+    return render(request,'homepage.html',{'data':data,'c':c1,'wlist':wl,'c2':c2})
 def loginpage(request):
     return render(request,'login.html')
 def registration(request):
@@ -61,10 +63,16 @@ def dologin(request):
         return redirect('homepage')
 @login_required(login_url='loginpage')
 def cart(request):
-    cart_items = CartItem.objects.filter(user=request.user.id)
-    total_price = sum(item.product.tprice * item.quantity for item in cart_items)
-    data3=sum(item.product.price * item.quantity for item in cart_items)
-    return render(request,'cart.html',{'data':cart_items,'data2':total_price,'data3':data3})
+    try:
+        user=CartItem.objects.get(user=request.user.id)
+        if user:
+            cart_items = CartItem.objects.filter(user=request.user.id)
+            total_price = sum(item.product.tprice * item.quantity for item in cart_items)
+            data3=sum(item.product.price * item.quantity for item in cart_items)
+            return render(request,'cart.html',{'data':cart_items,'data2':total_price,'data3':data3})
+    except:
+        messages.info(request,'no item in the cart')
+        return redirect('homepage')
 @login_required(login_url='loginpage')
 def logout(request):
     auth.logout(request)
@@ -80,6 +88,8 @@ def add_to_cart(request, pk):
     cart_item ,created= CartItem.objects.get_or_create(product=product, user=request.user)
     cart_item.quantity += 1
     cart_item.save()
+    data=wishlist.objects.filter(product=product.id)
+    data.delete()
     return redirect(homepage)
 @login_required(login_url='loginpage')
 def remove_from_cart(request,pk):
@@ -115,8 +125,27 @@ def do_payment(request):
         messages.success(request,'order succesfull')
         return redirect('homepage')
     return redirect('makepayment')
+@login_required(login_url='loginpage')
 def payment(request):
     return render(request,'payment.html')
 def view_item(request,pk):
     data=Product.objects.get(id=pk)
     return render(request,'view_item.html',{'data':data})
+@login_required(login_url='loginpage')
+def add_to_wish(request,pk):
+    data=Product.objects.get(id=pk)
+    wish=wishlist.objects.filter(product=data,user=request.user)
+    if wish:
+        messages.info(request,'alredy add to wishlist')
+        return redirect('homepage')
+    create=wishlist(product=data,user=request.user)
+    create.save()
+    return redirect('homepage')
+@login_required(login_url='loginpage')
+def wishlist_page(request):
+    cart_items = wishlist.objects.filter(user=request.user.id)
+    if cart_items:
+        return render(request,'wishlist.html',{'data':cart_items})
+    messages.info(request,'on item in wishlist')
+    return redirect('homepage')
+    

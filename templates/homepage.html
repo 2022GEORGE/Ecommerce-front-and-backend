@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 <div class="container text-light">
-        <div style="height:150px; margin-bottom:20px; margin-top:10px; background-color:white;" >
+        <div style="height:150px; margin-bottom:20px; margin-top:10px; background-color: #5168eb;" >
           <div class="table-responsive">
             <table  class="table-responsive" id="nav2">
               <tr>
@@ -42,7 +42,7 @@
 
         </section>
 
-        <section id="newproduct">
+        <section id="newproduct" style="background-color: #2039c5;">
           <div class="container my-5">
             <header class="mb-4">
               <h3  class="header" >New products</h3>
@@ -54,11 +54,14 @@
               <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
                  <a href="{% url 'view_item' i.id %}"> <div class="card w-100 my-2 shadow-2-strong bg-dark ">
                     <img src="{{i.image.url}}" class="card-img-top" style="aspect-ratio: 1 / 1" />
-                      <div class="card-body d-flex flex-column">
+                      <div class="card-body d-flex flex-column" style="text-align: center;">
                         <h5 class="card-title">{{i.description}}</h5>
                         <p class="card-text">&#8377;  {{i.price}}   <s>&#8377;{{i.tprice}}</s></p>
                       </a>
-                          <a href="{% url 'add_to_cart' i.id %}" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <div>
+                          <a href="{% url 'add_to_cart' i.id %}" onclick="load_data()" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                            <a href="{% url 'add_to_wish' i.id %}" onclick="load_data()" class="{% for wish in wlist %}{% if i.id == wish.product.id %}text-danger{% endif %}{% endfor %} "><i class="fa-solid fa-heart"></i></a>
+                          </div>
                       </div>
                   </div>
                
@@ -68,7 +71,7 @@
             </div>
           </div>
         </section>
-        <section id="mobile">
+        <section id="mobile" style="background-color: #1b1ed8;">
           <div class="container my-5">
             <header class="mb-4">
               <h3  >MOBILES</h3>
@@ -80,11 +83,14 @@
               <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
                 <a href="{% url 'view_item' i.id %}">   <div class="card w-100 my-2 shadow-2-strong  bg-dark">
                   <img src="{{i.image.url}}" class="card-img-top" style="aspect-ratio: 1 / 1" />
-                    <div class="card-body d-flex flex-column">
+                    <div class="card-body d-flex flex-column" style="text-align: center;">
                       <h5 class="card-title">{{i.description}}</h5>
                       <p class="card-text">&#8377;  {{i.price}}   <s>&#8377;{{i.tprice}}</s></p>
                     </a>
-                        <a href="{% url 'add_to_cart' i.id %}" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                    <div>
+                      <a href="{% url 'add_to_cart' i.id %}" onclick="load_data()" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                        <a href="{% url 'add_to_wish' i.id %}" onclick="load_data()" class="{% for wish in wlist %}{% if i.id == wish.product.id %}text-danger{% endif %}{% endfor %} "><i class="fa-solid fa-heart"></i></a>
+                      </div>
                    
                     </div>
                 </div>
@@ -94,7 +100,7 @@
              </div>
              </div>
         </section>
-        <section id="mobileacc">
+        <section id="mobileacc" style="background-color: #485bcc;">
           <div class="container my-5">
             <header class="mb-4">
               <h3  >MOBILE Accessories</h3>
@@ -103,14 +109,17 @@
             <div class="row" id="row1" data-aos="fade-up" data-aos-delay="100">
               {% for i in data %}
                 {% if i.category == 'ma' %}
-              <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+              <div class="col-lg-3 col-md-6 col-sm-6 d-flex" style="text-align: center;">
                 <a href="{% url 'view_item' i.id %}">  <div class="card w-100 my-2 shadow-2-strong  bg-dark">
                     <img src="{{i.image.url}}" class="card-img-top" style="aspect-ratio: 1 / 1" />
                       <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{i.description}}</h5>
                         <p class="card-text">&#8377;  {{i.price}}   <s>&#8377;{{i.tprice}}</s></p>
                       </a>
-                          <a href="{% url 'add_to_cart' i.id %}" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                      <div>
+                        <a href="{% url 'add_to_cart' i.id %}" onclick="load_data()" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                          <a href="{% url 'add_to_wish' i.id %}" onclick="load_data()" class="{% for wish in wlist %}{% if i.id == wish.product.id %}text-danger{% endif %}{% endfor %} "><i class="fa-solid fa-heart"></i></a>
+                        </div>
                      
                       </div>
                   </div>
@@ -120,7 +129,7 @@
             </div>
           </div>
         </section>
-        <section id="beauty">
+        <section id="beauty" style="background-color: #2c42bdd3;">
           <div class="container my-5">
             <header class="mb-4">
               <h3  >Beauty Products</h3>
@@ -132,11 +141,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
               <a href="{% url 'view_item' i.id %}"> <div class="card w-100 my-2 shadow-2-strong  bg-dark">
                   <img src="{{i.image.url}}" class="card-img-top" style="aspect-ratio: 1 / 1" />
-                    <div class="card-body d-flex flex-column">
+                    <div class="card-body d-flex flex-column" style="text-align: center;">
                       <h5 class="card-title">{{i.description}}</h5>
                       <p class="card-text">&#8377;  {{i.price}}   <s>&#8377;{{i.tprice}}</s></p>
                     </a>
-                        <a href="{% url 'add_to_cart' i.id %}" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                    <div>
+                      <a href="{% url 'add_to_cart' i.id %}" onclick="load_data()" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                        <a href="{% url 'add_to_wish' i.id %}" onclick="load_data()" class="{% for wish in wlist %}{% if i.id == wish.product.id %}text-danger{% endif %}{% endfor %} "><i class="fa-solid fa-heart"></i></a>
+                      </div>
                       
                     </div>
                 </div>
@@ -146,7 +158,7 @@
           </div>
         </div>
       </section>
-        <section id="pets">
+        <section id="pets" style="background-color: #4c61d8;">
           <div class="container my-5">
             <header class="mb-4">
               <h3  class="text-light" >Dogs food and Supplement</h3>
@@ -159,11 +171,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
               <a href="{% url 'view_item' i.id %}">  <div class="card w-100 my-2 shadow-2-strong  bg-dark">
                   <img src="{{i.image.url}}" class="card-img-top" style="aspect-ratio: 1 / 1" />
-                    <div class="card-body d-flex flex-column">
+                    <div class="card-body d-flex flex-column" style="text-align: center;">
                       <h5 class="card-title">{{i.description}}</h5>
                       <p class="card-text">&#8377;  {{i.price}}   <s>&#8377;{{i.tprice}}</s></p>
                     </a>
-                        <a href="{% url 'add_to_cart' i.id %}" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                    <div>
+                      <a href="{% url 'add_to_cart' i.id %}" onclick="load_data()" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                        <a href="{% url 'add_to_wish' i.id %}" onclick="load_data()" class="{% for wish in wlist %}{% if i.id == wish.product.id %}text-danger{% endif %}{% endfor %} "><i class="fa-solid fa-heart"></i></a>
+                      </div>
 
                     </div>
                 </div>
@@ -184,11 +199,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
               <a href="{% url 'view_item' i.id %}"> <div class="card w-100 my-2 shadow-2-strong  bg-dark">
                   <img src="{{i.image.url}}" class="card-img-top" style="aspect-ratio: 1 / 1" />
-                    <div class="card-body d-flex flex-column">
+                    <div class="card-body d-flex flex-column" style="text-align: center;">
                       <h5 class="card-title">{{i.description}}</h5>
                       <p class="card-text">&#8377;  {{i.price}}   <s>&#8377;{{i.tprice}}</s></p>
                     </a>
-                        <a href="{% url 'add_to_cart' i.id %}" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                    <div>
+                      <a href="{% url 'add_to_cart' i.id %}" onclick="load_data()" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                        <a href="{% url 'add_to_wish' i.id %}" onclick="load_data()" class="{% for wish in wlist %}{% if i.id == wish.product.id %}text-danger{% endif %}{% endfor %} "><i class="fa-solid fa-heart"></i></a>
+                      </div>
                     </div>
                     </div>
               </div>
@@ -197,7 +215,7 @@
           </div>
         </div>
         </section>
-        <section id="kitchen">
+        <section id="kitchen" style="background-color: #1b3cf5;">
           <div class="container my-5">
             <header class="mb-4">
               <h3 >Kitchen Items</h3>
@@ -209,11 +227,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
               <a href="{% url 'view_item' i.id %}">  <div class="card w-100 my-2 shadow-2-strong  bg-dark">
                   <img src="{{i.image.url}}" class="card-img-top" style="aspect-ratio: 1 / 1" />
-                    <div class="card-body d-flex flex-column">
+                    <div class="card-body d-flex flex-column" style="text-align: center;">
                       <h5 class="card-title">{{i.description}}</h5>
                       <p class="card-text">&#8377;  {{i.price}}   <s>&#8377;{{i.tprice}}</s></p>
                     </a>
-                        <a href="{% url 'add_to_cart' i.id %}" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                    <div>
+                      <a href="{% url 'add_to_cart' i.id %}" onclick="load_data()" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                        <a href="{% url 'add_to_wish' i.id %}" onclick="load_data()" class="{% for wish in wlist %}{% if i.id == wish.product.id %}text-danger{% endif %}{% endfor %} "><i class="fa-solid fa-heart"></i></a>
+                      </div>
                       
                     </div>
                 </div>
@@ -223,7 +244,7 @@
           </div>
         </div>
         </section>
-        <section id="health">
+        <section id="health" style="background-color: #1374e4;">
           <div class="container my-5">
             <header class="mb-4">
               <h3  >Health</h3>
@@ -235,11 +256,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
               <a href="{% url 'view_item' i.id %}">   <div class="card w-100 my-2 shadow-2-strong  bg-dark">
                   <img src="{{i.image.url}}" class="card-img-top" style="aspect-ratio: 1 / 1" />
-                    <div class="card-body d-flex flex-column">
+                    <div class="card-body d-flex flex-column" style="text-align: center;">
                       <h5 class="card-title">{{i.description}}</h5>
                       <p class="card-text">&#8377;  {{i.price}}   <s>&#8377;{{i.tprice}}</s></p>
                     </a>
-                        <a href="{% url 'add_to_cart' i.id %}" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                    <div>
+                      <a href="{% url 'add_to_cart' i.id %}" onclick="load_data()" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+                        <a href="{% url 'add_to_wish' i.id %}" onclick="load_data()" class="{% for wish in wlist %}{% if i.id == wish.product.id %}text-danger{% endif %}{% endfor %} "><i class="fa-solid fa-heart"></i></a>
+                      </div>
                      
                     </div>
                 </div>
@@ -250,7 +274,7 @@
         </div>
         </section>
 
-        <section  data-aos="fade-up" data-aos-delay="100">
+        <section  data-aos="fade-up" data-aos-delay="100" style="background-color: #1468d6;">
           
           <div class="row d-flex justify-content-center">
             <div class="col-md-10 col-xl-8 text-center">
@@ -319,80 +343,6 @@
        
         </section>
 
-
-
         </div>
-
-
-
-
-
-        <footer class="text-center text-lg-start text-muted " style="background-color: #f5f5f5; margin-left:20px; margin-right:20px; margin-top:50px;">
-          <!-- Section: Links  -->
-          <section class="">
-            <div class="container text-center text-md-start pt-4 pb-4">
-              <!-- Grid row -->
-              <div class="row mt-3">
-                <!-- Grid column -->
-                <div class="col-12 col-lg-3 col-sm-12 mb-2">
-                  <!-- Content -->
-                  <a href="https://mdbootstrap.com/" target="_blank" class="">
-                    <h2>Ecommerce</h2>
-                  </a>
-                  <p class="mt-2 text-dark">
-                    © 2023 Copyright: Ecommerce
-                  </p>
-                </div>
-                <!-- Grid column -->
-                <div class="col-6 col-sm-4 col-lg-2">
-                  <!-- Links -->
-                  <h6 class="text-uppercase text-dark fw-bold mb-2">
-                    Store
-                  </h6>
-                  <ul class="list-unstyled mb-4">
-                    <li><a class="text-muted" href="#">About us</a></li>
-                    <li><a class="text-muted" href="#">Find store</a></li>
-                    <li><a class="text-muted" href="#">Categories</a></li>
-                    <li><a class="text-muted" href="#">Blogs</a></li>
-                  </ul>
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2">
-                  <!-- Links -->
-                  <h6 class="text-uppercase text-dark fw-bold mb-2">
-                    Information
-                  </h6>
-                  <ul class="list-unstyled mb-4">
-                    <li><a class="text-muted" href="#">Help center</a></li>
-                    <li><a class="text-muted" href="#">Money refund</a></li>
-                    <li><a class="text-muted" href="#">Shipping info</a></li>
-                    <li><a class="text-muted" href="#">Refunds</a></li>
-                  </ul>
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2">
-                  <!-- Links -->
-                  <h6 class="text-uppercase text-dark fw-bold mb-2">
-                    Support
-                  </h6>
-                  <ul class="list-unstyled mb-4">
-                    <li><a class="text-muted" href="#">Help center</a></li>
-                    <li><a class="text-muted" href="#">Documents</a></li>
-                    <li><a class="text-muted" href="#">Account restore</a></li>
-                    <li><a class="text-muted" href="#">My orders</a></li>
-                  </ul>
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2">
-                  <h6 class="text-uppercase text-dark fw-bold mb-2">
-                   Location
-                  </h6>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.0739866451886!2d76.35812367376452!3d10.01074747285229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d9bfaa6db61%3A0xa5df6acfc2d1e5fd!2sALTOS%20Technologies!5e0!3m2!1sen!2sin!4v1702103962575!5m2!1sen!2sin" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <!-- Grid column -->
-                <div >
-                  <!-- Links -->
-                  
-                </div>
-              </div>
-            </div>
-        </footer>   
        
 {% endblock %}

@@ -50,22 +50,20 @@
         }
  a{
   text-decoration: none;
-  color:white;
+  color: white;
  }
 </style>
 </head>
-<body style=" background-color:rgba(15, 67, 126, 0.829);  font-family: 'Anton', sans-serif;
-font-family: 'Inconsolata', monospace;
-font-family: 'Oswald', sans-serif;">
-    <nav class="navbar navbar-default  navbar-expand-sm  " style="background-color: rgb(15, 67, 126); height:70px; z-index:5; font-family: Georgia, 'Times New Roman', Times, serif; position:sticky;top:0px;  width:100%;">
+<body style=" font-family: 'Anton', sans-serif; font-family: 'Inconsolata', monospace; font-family: 'Oswald', sans-serif; background-repeat: no-repeat; background-size: cover; background-position: center;  background-image:url('{% static 'images/body1.jpg' %}');" >
+    <nav class="navbar navbar-default  navbar-expand-sm " style=" background-color:rgb(15, 67, 126);      height:70px; z-index:5; font-family: Georgia, 'Times New Roman', Times, serif; position:sticky;top:0px;  width:100%;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" id="navbar-brand" href="#">Ecommerce</a>
-        <div class="collapse navbar-collapse  justify-content-end " id="navbarTogglerDemo01" style="background-color: rgb(15, 67, 126);">
-          <ul class="navbar-nav" id="nav" style=" color: white; padding:10px; font-weight: bolder; font-size: larger; font-family: Georgia, 'Times New Roman', Times, serif;">
-            <li class="nav-item ">
-              <a class="nav-link" href="{% url 'homepage' %}" >Home</a>
+        <div class="collapse navbar-collapse  justify-content-end " id="navbarTogglerDemo01">
+          <ul class="navbar-nav" id="nav" style=" padding:10px; font-weight: bolder; font-size: larger; font-family: Georgia, 'Times New Roman', Times, serif;">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'homepage' %}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'loginpage' %}">Login</a>

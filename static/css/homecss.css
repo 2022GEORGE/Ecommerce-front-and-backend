@@ -2,11 +2,20 @@ form{
   height:auto;
   width:400px;
   margin-top:50px; 
-  background-color: rgba(255,255,255,0.13);
+  background-color: rgba(159, 34, 231, 0.473);
   border-radius: 10px;
+  backdrop-filter: blur(8px);
   border: 2px solid rgba(255,255,255,0.1);
-  box-shadow: 0 0 40px rgba(8,7,16,0.6);
-  padding: 50px 35px;}
+  box-shadow: 0 0 40px rgba(8,7,16,0.7);
+  padding: 50px 35px;
+}
+#cart{
+  background-color: rgba(34, 37, 231, 0.473);
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgba(8,7,16,0.7);
+}
 form *{
   font-family: 'Poppins',sans-serif;
   color: #ffffff;
@@ -84,8 +93,8 @@ margin-right: 4px;
       height:240px;
       transition: width 2s;
 }
-#nav2 img:hover{
-    height:105px;
+#nav2 a:hover{
+  opacity: 0.5;
     }
 #navbar-brand{
   font-size: xx-large;

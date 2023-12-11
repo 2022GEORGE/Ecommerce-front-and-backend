@@ -18,5 +18,7 @@ urlpatterns = [
    path('makepayment',views.makepayment,name='makepayment'),
    path('do_payment',views.do_payment,name='do_payment'),
    path('paymet',views.payment,name='payment'),
-   path('view_item/<int:pk>',views.view_item,name='view_item')
+   path('view_item/<int:pk>',views.view_item,name='view_item'),
+   path('add_to_wish<int:pk>',views.add_to_wish,name='add_to_wish'),
+   path('wishlist_page',views.wishlist_page,name='wishlist_page')
 ]

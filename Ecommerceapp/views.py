@@ -63,14 +63,12 @@ def dologin(request):
         return redirect('homepage')
 @login_required(login_url='loginpage')
 def cart(request):
-    try:
-        user=CartItem.objects.get(user=request.user.id)
+        user=CartItem.objects.filter(user=request.user.id)
         if user:
             cart_items = CartItem.objects.filter(user=request.user.id)
             total_price = sum(item.product.tprice * item.quantity for item in cart_items)
             data3=sum(item.product.price * item.quantity for item in cart_items)
             return render(request,'cart.html',{'data':cart_items,'data2':total_price,'data3':data3})
-    except:
         messages.info(request,'no item in the cart')
         return redirect('homepage')
 @login_required(login_url='loginpage')
@@ -88,8 +86,6 @@ def add_to_cart(request, pk):
     cart_item ,created= CartItem.objects.get_or_create(product=product, user=request.user)
     cart_item.quantity += 1
     cart_item.save()
-    data=wishlist.objects.filter(product=product.id)
-    data.delete()
     return redirect(homepage)
 @login_required(login_url='loginpage')
 def remove_from_cart(request,pk):
@@ -148,4 +144,13 @@ def wishlist_page(request):
         return render(request,'wishlist.html',{'data':cart_items})
     messages.info(request,'on item in wishlist')
     return redirect('homepage')
-    
+def about(request):
+    return render(request,'about.html')
+def wish_to_cart(request,pk):
+    product = Product.objects.get(id=pk)
+    cart_item ,created= CartItem.objects.get_or_create(product=product, user=request.user)
+    cart_item.quantity += 1
+    cart_item.save()
+    data=wishlist.objects.filter(product=product.id)
+    data.delete()
+    return redirect(wishlist_page)

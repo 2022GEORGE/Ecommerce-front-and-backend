@@ -59,7 +59,7 @@ font-family: 'Inconsolata', monospace;
 font-family: 'Oswald', sans-serif;">
     <nav class="navbar navbar-default  navbar-expand-sm  " style="background-color: rgb(15, 67, 126); height:70px; z-index:5; font-family: Georgia, 'Times New Roman', Times, serif; position:sticky;top:0px;  width:100%;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+          <span class="navbar-toggler-icon"><i class="fa-solid fa-bars text-light"></i></span>
         </button>
         <a class="navbar-brand" id="navbar-brand" href="#">Ecommerce</a>
         <div class="collapse navbar-collapse  justify-content-end " id="navbarTogglerDemo01" style="background-color: rgb(15, 67, 126);">
@@ -74,18 +74,22 @@ font-family: 'Oswald', sans-serif;">
               <a class="nav-link " href="{% url 'logout' %}">LogOut</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link " href="{% url 'about' %}" >About</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link " href="{% url 'cart' %}" ><i class="fa-solid fa-cart-shopping">{{c}}</i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="{% url 'wishlist_page' %}" ><i class="fa-solid fa-heart">{{c2}}</i></a>
             </li>
+            
           </ul>
         </div>
       </nav>
  {% block content %}
  {% endblock %}  
 
- <footer class="text-center text-lg-start text-muted " style="background-color: #f5f5f5;  margin-top:50px;">
+ <footer class="text-center text-lg-start text-muted " style="background-color: #f5f5f5;  margin-top:50px; margin-bottom: 0px;" >
   <!-- Section: Links  -->
   <section class="">
     <div class="container text-center text-md-start pt-4 pb-4">
@@ -94,7 +98,7 @@ font-family: 'Oswald', sans-serif;">
         <!-- Grid column -->
         <div class="col-12 col-lg-3 col-sm-12 mb-2">
           <!-- Content -->
-          <a href="https://mdbootstrap.com/" target="_blank" class="">
+          <a href="#" target="_blank" class="text-dark">
             <h2>Ecommerce</h2>
           </a>
           <p class="mt-2 text-dark">

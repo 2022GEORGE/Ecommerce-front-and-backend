@@ -20,5 +20,7 @@ urlpatterns = [
    path('paymet',views.payment,name='payment'),
    path('view_item/<int:pk>',views.view_item,name='view_item'),
    path('add_to_wish<int:pk>',views.add_to_wish,name='add_to_wish'),
-   path('wishlist_page',views.wishlist_page,name='wishlist_page')
+   path('wishlist_page',views.wishlist_page,name='wishlist_page'),
+   path('about',views.about,name='about'),
+   path('wish_to_cart<int:pk>',views.wish_to_cart,name='wish_to_cart')
 ]

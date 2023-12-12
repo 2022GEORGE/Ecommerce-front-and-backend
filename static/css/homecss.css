@@ -157,28 +157,13 @@ margin-right: 4px;
 
     form{
       height:auto;
-      width:300px;
+      width:auto;
       margin-top:50px;
-      background-color: rgba(255,255,255,0.13);
+      background-color: rgba(159, 34, 231, 0.473);
       border-radius: 10px;
       border: 2px solid rgba(255,255,255,0.1);
       box-shadow: 0 0 40px rgba(8,7,16,0.6);
       padding: 50px 35px;
     }
 
-
-
-
-
-
-
-
-
-/* #login_img{
-  width:170px;
-}
-#login_form{
-  width:250px;
-  height:400px;
-} */
     }
